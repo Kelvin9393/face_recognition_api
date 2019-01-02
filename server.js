@@ -23,7 +23,7 @@ app.use(bodyParser.json())
 app.use(cors())
 
 app.get('/', (req, res) => {
-  // res.send(database.users)
+  res.send('It is working')
 })
 app.post('/signin', (req, res) => { signin.handleSignin(req, res, knex, bcrypt) })
 app.post('/register', (req, res) => { register.handleRegister(req, res, knex, bcrypt) })
