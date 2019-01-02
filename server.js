@@ -3,13 +3,8 @@ const bodyParser = require('body-parser')
 const bcrypt = require('bcrypt-nodejs')
 const cors = require('cors')
 const knex = require('knex')({
-  client: 'pg',
-  connection: {
-    host: 'postgresql-fitted-63771',
-    user: 'dumuidihohdmwz',
-    password: '',
-    database: 'smart-brain'
-  }
+  connectionString: process.env.DATABASE_URL,
+  ssl: true,
 })
 
 const register = require('./controllers/register')
